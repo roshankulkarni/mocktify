@@ -33,10 +33,58 @@ curl -X GET http://localhost:3000/api/user/1
 Contains configuration files and route definitions.
 
 `/controllers`
+
 Contains target controllers which are mapped to the various URIs. Controllers can be organized in a sub-directory hierarchy here to your liking. Just make sure you configure the route definitions appropriately.
 
 `/framework`
+
 Contains the framework code. You are unlikely to muck around this folder, unless you are extending the framework itself.
+
+
+# Mocktify Configuration
+
+
+## Customizing Routes
+Custom routes can be defined in the `config/routes.js` file. The `routeDef` array in that file is a collection of defined routes. Each route looks like this:
+
+```
+	...
+	{
+		name: "Fetch User API",
+		uri: "/api/user/:id",
+		method: "get",
+		controller: "user/get",
+		latency: 2000
+	}
+	... More Routes
+```
+
+Attribute | Description
+--------- | -----------
+name | Human readable name of this route
+uri | URI of the incoming HTTP request
+method | Method (HTTP Verb) of the incoming HTTP request
+controller | Controller module to be invoked when a request is received
+latency | Simulate a response latency before actually sending the response back to the client
+
+
+## Server Configuration
+
+You can deploy Mocktify in various environments with different configurations for each environment. The server configuration is found at this location `config/config.js`.
+
+Here are the presently supported configuration parameters:
+```
+{
+	port: 3000,
+	controllersDir: "./controllers",
+	prettyPrintJSON: true
+}
+```
+Attribute | Description
+--------- | -----------
+port | Port at which the HTTP server should listen
+controllersDir | Directory where controller modules are present
+prettyPrintJSON | Should Mocktify return pretty-printed JSON to the client or not?
 
 
 # License
