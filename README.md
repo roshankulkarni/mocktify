@@ -1,5 +1,5 @@
 # Mocktify API Server
-Mocktify is a framework that helps you to quickly publish "Mock REST APIs" to your client applications. 
+Mocktify is a framework that helps you to quickly publish "Mock REST APIs" required by your client applications.
 
 When developing client applications, you sometimes need to assemble a set of mock REST Endpoints that your clients can invoke. These endpoints need to support various HTTP VERBS and then return static JSON responses to the client. Mocktify is an ExpressJS-powered framework that help you define route mappings and controller code to implement these mock endpoints.
 
