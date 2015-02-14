@@ -1,29 +1,35 @@
 # Mocktify API Server
-Mocktify is a framework to help you quickly generate "Mock REST APIs". When developing client applications, you sometimes need to assemble a set of mock REST endpoints that can handle various HTTP VERBS and which can be invoked from your client. Mocktify is an ExpressJS-powered framework that help you define route mappings and controller code to implement these mock endpoints.
+Mocktify is a framework to help you quickly generate "Mock REST APIs". When developing client applications, you sometimes need to assemble a set of mock REST endpoints that can handle various HTTP VERBS and return static JSON responses to your liking. Mocktify is an ExpressJS-powered framework that help you define route mappings and controller code to implement these mock endpoints.
+
 
 # Getting Started
 
-## Running the Mocktify Server:
+## Running the Mocktify Server
 
-To get started, simply clone this project and then run the Mocktify server this way:
-
+To get started, simply clone this project and then install the dependencies required by Mocktify:
 
 ```
 $ npm install
+```
+
+Then, let's go ahead and run the Mocktify server:
+```
 $ node app.js
 ```
 
-## Testing the Mocktify Server:
+## Testing the Mocktify Server
 
-By default, Mocktify has a bunch of test REST endpoints that you can invoke right away. You can use CURL or another other REST Client tool to do this:
+By default, Mocktify exposes a bunch of sample REST endpoints that you can invoke right away. You can use CURL or another other REST Client tool to do this. Here is an example:
 
 ```
-curl http://localhost:3000/api/user/1
+curl -X GET http://localhost:3000/api/user/1
 ```
 
-# Understanding the Mocktify Directory Structure
+
+# Mocktify Directory Structure
 
 `/config`
+
 Contains configuration files and route definitions.
 
 `/controllers`
